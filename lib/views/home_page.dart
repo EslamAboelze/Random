@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:tester/widgets/custom_appbar.dart';
 import 'package:tester/widgets/custom_note_view.dart';
+import 'package:tester/widgets/show_modal_bottom_sheet.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,12 +18,23 @@ class HomePage extends StatelessWidget {
               height: 35,
             ),
             CustomAppbar(),
-            CustomListItem()
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: CustomListItem(),
+              ),
+            )
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return const AddNewNote();
+              });
+        },
         backgroundColor: Colors.black,
         child: const Icon(
           Icons.add,

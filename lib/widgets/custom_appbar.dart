@@ -6,22 +6,25 @@ class CustomAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          "NoteApp",
-          style: TextStyle(color: Colors.white, fontSize: 30),
-        ),
-        Spacer(),
-        Container(
-          height: 45,
-          width: 45,
-          decoration: BoxDecoration(
-              color: Colors.white.withOpacity(.05),
-              borderRadius: BorderRadius.circular(20)),
-          child: const CustomIcon(),
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 20),
+      child: Row(
+        children: [
+          Text(
+            "NoteApp",
+            style: TextStyle(color: Colors.white, fontSize: 30),
+          ),
+          Spacer(),
+          Container(
+            height: 45,
+            width: 45,
+            decoration: BoxDecoration(
+                color: Colors.white.withOpacity(.05),
+                borderRadius: BorderRadius.circular(20)),
+            child: const CustomIcon(),
+          )
+        ],
+      ),
     );
   }
 }
