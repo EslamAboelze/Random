@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
               height: 35,
             ),
             CustomAppbar(),
-            CustomNoteView()
+            CustomListItem()
           ],
         ),
       ),
