@@ -1,6 +1,7 @@
 //stls
 import 'package:flutter/material.dart';
 import 'package:tester/widgets/custom_appbar.dart';
+import 'package:tester/widgets/custom_icon.dart';
 import 'package:tester/widgets/custom_note_view.dart';
 import 'package:tester/widgets/show_modal_bottom_sheet.dart';
 
@@ -10,14 +11,17 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const Padding(
+      body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
             SizedBox(
               height: 35,
             ),
-            CustomAppbar(),
+            CustomAppbar(
+              title: "NoteApp",
+              widget: CustomIconSearch(),
+            ),
             Expanded(
               child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 10),
@@ -30,6 +34,10 @@ class HomePage extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
+              backgroundColor: Colors.black.withOpacity(.75),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
               context: context,
               builder: (context) {
                 return const AddNewNote();

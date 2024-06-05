@@ -5,6 +5,7 @@ void main() {
   runApp(const Note_App());
 }
 
+// ignore: camel_case_types
 class Note_App extends StatelessWidget {
   const Note_App({super.key});
 
